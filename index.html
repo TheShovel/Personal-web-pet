@@ -219,6 +219,7 @@
 
       {const providers = {};
 providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:p4-@Small web pet.sb3");
+providers.ws = new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Small web pet.sb3");
 for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
 scaffolding.addCloudProviderOverride("☁ pet name", providers["local"] || null);
 scaffolding.addCloudProviderOverride("☁ favorite color", providers["local"] || null);
@@ -227,6 +228,9 @@ scaffolding.addCloudProviderOverride("☁ hunger", providers["local"] || null);
 scaffolding.addCloudProviderOverride("☁ happiness", providers["local"] || null);
 scaffolding.addCloudProviderOverride("☁ money", providers["local"] || null);
 scaffolding.addCloudProviderOverride("☁ old log in", providers["local"] || null);
+scaffolding.addCloudProviderOverride("☁ age", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ birth", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ accessory", providers["ws"] || null);
 };
 
       vm.setTurboMode(false);
